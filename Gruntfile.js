@@ -13,7 +13,7 @@ module.exports = (grunt)=>{
 					style: 'expanded'
 		  		},
 		  		files: {                         
-					'public/stylesheets/style.css': 'node_modules/bootstrap/scss/bootstrap.scss'
+					'public/stylesheets/style.css': 'sass/main.scss'
 		  		}
 		    }
 	  	}
