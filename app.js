@@ -3,7 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let session = require('express-session')
+let session = require('express-session');
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
 	secret: "laskdjf3w2jfo983f3982fj3982j3298fjh3298fh23f8h2f7sdhfs7duvcgha<hchj9e3!",
 	resave: false,
-	saveUninitialized: false
+	saveUninitialized: false 
 }))
 
 app.use('/', indexRouter);

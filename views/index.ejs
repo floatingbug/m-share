@@ -4,26 +4,31 @@
 	  <meta name="color-scheme" content="dark">
 	  <%- include('partials/title') %> 
 	  <link rel='stylesheet' href='/stylesheets/style.css' />
+ 		<link rel="shortcut icon" href="#">
   </head>
   <body>
-   
-	  <div class="container">
-		<div class="row">
-			<div class="col">
-				<h1>m-share</h1>
-    			<p>Welcome to m-share</p>
+  
+	<div id="app">
+	  	<div class="container">
+			<div class="row">
+				<div class="col">
+				
+					<h1>m-share</h1>
+    				<p>Welcome to m-share</p>
+				
+					<% if(locals.login){ %>
+						<%- include('partials/login') %>
+					<% } %>
+
+					<% if(locals.userPage){ %>
+						<%- include('partials/userPage') %>
+					<% } %>
+				
+				</div>
 			</div>
 		</div>
-	</div>
-	
-	<% if(locals.login){ %>
-		<%- include('partials/login') %>
-	<% } %>
+	 </div>
 
-	<% if(locals.userPage){ %>
-		<%- include('partials/userPage') %>
-	<% } %>
-
-  	<script src='javascripts/main.js></script>
+	<script src='javascripts/main.js'></script>
   </body>
 </html>

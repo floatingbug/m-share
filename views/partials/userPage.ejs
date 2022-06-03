@@ -1,1 +1,23 @@
-<p>Hello userPage</p>
+{{getPlaylists}}
+
+
+<div v-if="playlists.length > 0" v-for="playlist in playlists">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th scope="col">{{playlist.name}}</th>
+			</tr>
+		</thead>
+		<tr class="table-primary" v-for="trackName in playlist.title">
+			<th scope="row">
+				<button v-on:click="play" v-bind:data-playlist="playlist.name"
+										  v-bind:data-trackName="trackName">
+					{{trackName}}
+				</button>
+				<button v-on:click="stop">stop</button>
+				<input type="range" v-on:click="setSongPos" class="form-range" min="0"  max="100">
+			</th>
+		</tr>
+	</table>
+</div>
+
